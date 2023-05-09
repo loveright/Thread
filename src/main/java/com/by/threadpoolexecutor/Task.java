@@ -1,4 +1,4 @@
-package com.by.newSingleThreadScheduled;
+package com.by.threadpoolexecutor;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
