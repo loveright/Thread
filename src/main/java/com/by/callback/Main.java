@@ -1,24 +1,24 @@
 package com.by.callback;
 
 /**
- * ³ÌĞòÈë¿Ú
+ * ç¨‹åºå…¥å£
  * @Author Tan
  */
 public class Main {
     public static void main(String[] args) {
 
-        // ¶¨ÒåÒ»¸ö»Øµ÷
+        // å®šä¹‰ä¸€ä¸ªå›è°ƒ
         Callback callback = new Callback() {
             @Override
             public void returnResult(String msg) {
-                System.out.println("Ğ¡Ã÷Í¨Öª£º" + msg);
+                System.out.println("å°æ˜é€šçŸ¥ï¼š" + msg);
             }
         };
         Me me = new Me();
-        System.out.println("ÎÒ×¼±¸ÂòÆ±----");
-//        me.buyTicketsSyn(callback);           //·¢ÆğÂòÆ±£¨Í¬²½»Øµ÷£©
-        me.buyTicketsSynASyn(callback);         //·¢ÆğÂòÆ±£¨Òì²½»Øµ÷£©
-        System.out.println("ÎÒÔÚµÈ´ı³öÆ±----");
+        System.out.println("æˆ‘å‡†å¤‡ä¹°ç¥¨----");
+//        me.buyTicketsSyn(callback);           //å‘èµ·ä¹°ç¥¨ï¼ˆåŒæ­¥å›è°ƒï¼‰
+        me.buyTicketsSynASyn(callback);         //å‘èµ·ä¹°ç¥¨ï¼ˆå¼‚æ­¥å›è°ƒï¼‰
+        System.out.println("æˆ‘åœ¨ç­‰å¾…å‡ºç¥¨----");
 
 
     }

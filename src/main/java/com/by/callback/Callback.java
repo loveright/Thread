@@ -1,7 +1,7 @@
 package com.by.callback;
 
 /**
- * »Øµ÷£¬ÕâÊÇĞ¡Ã÷
+ * å›è°ƒï¼Œè¿™æ˜¯å°æ˜
  * @Author TanXiongzhan
  */
 public interface Callback {

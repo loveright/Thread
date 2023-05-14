@@ -1,26 +1,26 @@
 package com.by.callback;
 
 /**
- * ÕâÊÇÎÒ
+ * è¿™æ˜¯æˆ‘
  * @Author Tan
  */
 public class Me {
 
-    // Ö¸¶¨Ò»¸öÊÛÆ±ÈË(´ı»áËû³öÆ±ºóÒªÍ¨ÖªÎÒ)
+    // æŒ‡å®šä¸€ä¸ªå”®ç¥¨äºº(å¾…ä¼šä»–å‡ºç¥¨åè¦é€šçŸ¥æˆ‘)
     Conductor conductor = new Conductor();
 
     /*
-     * Í¬²½»Øµ÷
-     * ·½·¨£ºÂòÆ±
-     * ÄÚÈİ£ºÄÚÈİ£º°Ñ»Øµ÷¶ÔÏó(Ğ¡Ã÷)´«¸øÊÛÆ±Ô±
+     * åŒæ­¥å›è°ƒ
+     * æ–¹æ³•ï¼šä¹°ç¥¨
+     * å†…å®¹ï¼šå†…å®¹ï¼šæŠŠå›è°ƒå¯¹è±¡(å°æ˜)ä¼ ç»™å”®ç¥¨å‘˜
      */
     public void buyTicketsSyn(Callback callback) {
         conductor.printTickets(callback);
     }
     /*
-     * Òì²½»Øµ÷
-     * ·½·¨£ºÂòÆ±
-     * ÄÚÈİ£º°Ñ»Øµ÷¶ÔÏó(Ğ¡Ã÷)´«¸øÊÛÆ±Ô±
+     * å¼‚æ­¥å›è°ƒ
+     * æ–¹æ³•ï¼šä¹°ç¥¨
+     * å†…å®¹ï¼šæŠŠå›è°ƒå¯¹è±¡(å°æ˜)ä¼ ç»™å”®ç¥¨å‘˜
      */
     public void buyTicketsSynASyn(Callback callback) {
         new Thread(new Runnable() {

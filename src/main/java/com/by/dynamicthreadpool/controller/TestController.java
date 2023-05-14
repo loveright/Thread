@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * @author zhouboyang
  * @version 1.0
  * @ClassName TestController
- * @description: TODO
+ * @description: 测试根据nocos实现的动态线程池
  * @date 2023/5/10 23:36
  */
 @RestController

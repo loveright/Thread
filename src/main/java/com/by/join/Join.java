@@ -6,9 +6,9 @@ public class Join {
         @Override
         public void run() {
             try {
-                System.out.println("ÎÒÊÇ×ÓÏß³Ì£¬ÏÈË¯Ò»Ãë");
+                System.out.println("æˆ‘æ˜¯å­çº¿ç¨‹ï¼Œå…ˆç¡ä¸€ç§’");
                 Thread.sleep(1000);
-                System.out.println("ÎÒÊÇ×ÓÏß³Ì£¬ÎÒË¯ÍêÁËÒ»Ãë");
+                System.out.println("æˆ‘æ˜¯å­çº¿ç¨‹ï¼Œæˆ‘ç¡å®Œäº†ä¸€ç§’");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -18,8 +18,8 @@ public class Join {
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new ThreadA());
         thread.start();
-        thread.join(); // ¼ÓÈëµ½Ö÷Ïß³ÌÖĞ£¬ÕâÑù¾Í±ä³ÉË³Ğò
-        // ÕâÊÇÖ÷Ïß³ÌÊä³ö
-        System.out.println("Èç¹û²»¼Ójoin·½·¨£¬ÎÒ»áÏÈ±»´ò³öÀ´£¬¼ÓÁË¾Í²»Ò»ÑùÁË");
+        thread.join(); // åŠ å…¥åˆ°ä¸»çº¿ç¨‹ä¸­ï¼Œè¿™æ ·å°±å˜æˆé¡ºåº
+        // è¿™æ˜¯ä¸»çº¿ç¨‹è¾“å‡º
+        System.out.println("å¦‚æœä¸åŠ joinæ–¹æ³•ï¼Œæˆ‘ä¼šå…ˆè¢«æ‰“å‡ºæ¥ï¼ŒåŠ äº†å°±ä¸ä¸€æ ·äº†");
     }
 }

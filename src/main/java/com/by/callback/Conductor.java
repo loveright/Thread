@@ -1,7 +1,7 @@
 package com.by.callback;
 
 /**
- * ÊÛÆ±Ô±
+ * å”®ç¥¨å‘˜
  *
  * @Author Tan
  */
@@ -9,16 +9,16 @@ public class Conductor {
 
     public void printTickets(Callback callback) {
 
-        System.out.println("ÊÛÆ±Ô±¿ªÊ¼´¦Àí . . . ");
+        System.out.println("å”®ç¥¨å‘˜å¼€å§‹å¤„ç† . . . ");
         try {
             Thread.currentThread();
             Thread.sleep(3000);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("ÊÛÆ±Ô±´¦ÀíÍê±Ï . . . ");
+        System.out.println("å”®ç¥¨å‘˜å¤„ç†å®Œæ¯• . . . ");
 
-        // ³öÆ±Íê³É£¬Í¨Öª³öÆ±½á¹û(ÕâÀïÊÇ·¢Æğ»Øµ÷µÄµØ·½)
-        callback.returnResult("³öÆ±Íê³É");
+        // å‡ºç¥¨å®Œæˆï¼Œé€šçŸ¥å‡ºç¥¨ç»“æœ(è¿™é‡Œæ˜¯å‘èµ·å›è°ƒçš„åœ°æ–¹)
+        callback.returnResult("å‡ºç¥¨å®Œæˆ");
     }
 }
