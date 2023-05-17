@@ -33,9 +33,9 @@ public class RedisPublish {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         redisTemplate = (RedisTemplate) context.getBean("redisTemplate");
 //        redisTemplate.setDefaultSerializer(new FastJsonRedisSerializer<>(Object.class));
-        Map<String, String> map = new HashMap<>();
-        map.put("key1", "value1");
-        map.put("key2", "value2");
+        Map<String, Object> map = new HashMap<>();
+        map.put("coreSize", 6);
+        map.put("maxSize", 10);
         redisTemplate.convertAndSend("ITCAST",map);
     }
 }

@@ -1,6 +1,7 @@
 package com.by.dynamicthreadpool.threadpool;
 
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ThreadPoolExecutor;
 

@@ -1,11 +1,13 @@
-package com.by.dynamicregisterbean;
+package com.by.dynamicthreadpoolbyredis.threadpool;
 
+import com.by.dynamicthreadpool.threadpool.DynamicThreadPoolExecutor;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
@@ -15,11 +17,14 @@ import java.util.logging.Logger;
 /**
  * @author zhouboyang
  * @version 1.0
- * @ClassName PersonBeanFactoryPostProcessor
- * @description: 动态注册bean
- * @date 2023/5/14 11:01
+ * @ClassName InitThreadPool
+ * @description: TODO
+ * @date 2023/5/16 21:57
  */
-public class PersonBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+@Component
+public class InitThreadPool implements BeanFactoryPostProcessor {
+
+
     private static final Logger log = Logger.getAnonymousLogger();
 
     @Override
@@ -29,14 +34,16 @@ public class PersonBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
 
         // 注册Bean定义，容器根据定义返回bean
         BeanDefinitionBuilder beanDefinitionBuilder =
-                BeanDefinitionBuilder.genericBeanDefinition(ThreadPoolTaskExecutor.class);
+                BeanDefinitionBuilder.genericBeanDefinition(DynamicThreadPoolExecutor.class);
         BeanDefinition threadPoolBeanDefinition = beanDefinitionBuilder.getRawBeanDefinition();
-        defaultListableBeanFactory.registerBeanDefinition("threadPoolExecutor", threadPoolBeanDefinition);
 
-        //注册bean实例
-        log.info("register poolExecutor>>>>>>>>>>>>>>>>");
-        ThreadPoolTaskExecutor poolExecutor = beanFactory.getBean(ThreadPoolTaskExecutor.class);
-        beanFactory.registerSingleton("poolExecutor", poolExecutor);
+        // 核心线程数
+        threadPoolBeanDefinition.getConstructorArgumentValues().addGenericArgumentValue(2);
+        // 最大线程数
+        threadPoolBeanDefinition.getConstructorArgumentValues().addGenericArgumentValue(5);
+        // 线程名称前缀
+        threadPoolBeanDefinition.getConstructorArgumentValues().addGenericArgumentValue("thread-");
+        defaultListableBeanFactory.registerBeanDefinition("threadPoolExecutor", threadPoolBeanDefinition);
 
     }
 }
